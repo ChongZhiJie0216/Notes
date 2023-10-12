@@ -18,7 +18,7 @@ sudo dpkg -i ./VNC-Server-7.6.1-Linux-ARM64.deb
 # 3.输入激活码
 
 ```bash
-sudo vnclicense -add VKUPN-MTHHC-UDHGS-UWD76-6N36A
+sudo vnclicense -add XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
 ```
 
 # 4.设置密码
