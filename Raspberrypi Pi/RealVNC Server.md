@@ -11,54 +11,38 @@ sudo apt install curl wget git -y
 # 2.下载安装包
 
 ```bash
-wget https://downloads.realvnc.com/download/file/vnc.files/VNC-Server-7.6.1-Linux-ARM64.deb
-sudo dpkg -i ./VNC-Server-7.6.1-Linux-ARM64.deb
+wget https://downloads.realvnc.com/download/file/vnc.files/VNC-Server-6.11.0-Linux-ARM64.deb
+sudo dpkg -i ./VNC-Server-6.11.0-Linux-ARM64.deb
+sudo ln libvcos.so /usr/lib/libvcos.so.0
+sudo ln libvchiq_arm.so /usr/lib/libvchiq_arm.so.0
+sudo ln libbcm_host.so /usr/lib/libbcm_host.so.0
 ```
 
-# 3.输入激活码
+# 4.编辑 /etc/gdm3/custom.conf 文件
+
+因为您正在使用非 LTS 版本，并取消注释 WaylandEnable=false。
+
+```bash
+sudo nano /etc/gdm3/custom.conf
+```
+
+# 5.输入激活码
 
 ```bash
 sudo vnclicense -add XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
 ```
 
-# 4.设置密码
+# 6.设置密码
 
 ```bash
 vncpasswd
 ```
 
-# 5.设置开机自动启动
+# 7.设置开机自动启动
 
 ```bash
-sudo nano /etc/systemd/system/realvnc.service
-```
-
-粘贴以下内容:
-
-```bash
-[Unit]
-Description=RealVNC Server
-After=network.target
-
-[Service]
-ExecStart=/usr/bin/vncserver-x11-serviced -run
-Restart=on-failure
-RestartSec=2
-User=your_username
-WorkingDirectory=/home/your_username
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-请确保将 your_username 替换为您的实际用户名。
-使用 Ctrl+O，然后 Ctrl+X 退出 nano 编辑器
-
-```bash
-sudo systemctl enable realvnc.service
-sudo systemctl start realvnc.service
-sudo systemctl status realvnc.service
-sudo systemctl enable realvnc.service #设置开机启动
-sudo systemctl disable realvnc.service #关闭开机启动
+sudo systemctl enable vncserver-virtuald.service
+sudo systemctl enable vncserver-x11-serviced.service
+sudo systemctl start vncserver-virtuald.service
+sudo systemctl start vncserver-x11-serviced.service
 ```
