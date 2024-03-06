@@ -41,7 +41,9 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on"
 ```
 
 >[!Note]
-> ```pci=realloc=off``  This Varable of give my LSI2008 HBA Card
+> ```pci=realloc=off```
+> This Varable of give for Serial Attached SCSI controller
+> Broadcom / LSI SAS2008 PCI-Express Fusion-MPT SAS-2 [Falcon] (rev 03)
 
 
 ### Update Grub
