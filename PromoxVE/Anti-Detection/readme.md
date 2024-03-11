@@ -226,7 +226,7 @@ sed -i 's/"KVM/"ATX/g' target/s390x/tcg/misc_helper.c
 echo "结束sed工作"
 ```
 > [!NOTE]  
-> |sed -i 's/KVMKVMKVM\\0\\0\\0/GenuineIntel/g' target/i386/kvm/kvm.c.|
+> `sed -i 's/KVMKVMKVM\\0\\0\\0/GenuineIntel/g' target/i386/kvm/kvm.c.`
 > I Comment of this becuase I need vGPU Support ,if you need pelase unComment.
 
 ### 5.5 Give Permission of |sedPatch-pve-qemu-kvm7-8-anti-dection.sh|
