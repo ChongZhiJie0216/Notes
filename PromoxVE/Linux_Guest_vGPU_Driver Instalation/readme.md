@@ -45,6 +45,6 @@ nvidia-smi -q | grep License
   4.  Go to Settings > Users Scripts > Add New Script
   5.  Give it a name  (the name must not contain spaces preferably)
   6.  Click on the gear icon to the left of the script name then edit script
-  7.  Paste the **[script]()** and save
+  7.  Downlaod the **[Script](https://github.com/ChongZhiJie0216/Notes/blob/main/PromoxVE/Linux_Guest_vGPU_Driver%20Instalation/setup_vgpu_license.sh)** and save
   8.  Set schedule to At First Array Start Only
   9.  Click on Apply
