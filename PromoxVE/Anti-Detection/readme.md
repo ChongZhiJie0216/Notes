@@ -11,7 +11,7 @@
 mv /etc/apt/sources.list /etc/apt/sources.list.deleted
 mv /etc/apt/sources.list.d/pve-enterprise.list /etc/apt/sources.list.d/pve-enterprise.list.deleted
 ```
-### 1.2 Edit |/etc/apt/sources.list|
+### 1.2 Edit | /etc/apt/sources.list |
 ```bash
 deb https://mirrors.ustc.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
 deb https://mirrors.ustc.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
@@ -25,13 +25,13 @@ deb https://mirrors.ustc.edu.cn/proxmox/debian/ceph-quincy bookworm main
 deb https://mirrors.ustc.edu.cn/proxmox/debian/devel bookworm main
 ```
 
-### 1.3 nano |/etc/apt/sources.list.d/ceph.list|
+### 1.3 nano | /etc/apt/sources.list.d/ceph.list |
 ```bash
 #deb https://enterprise.proxmox.com/debian/ceph-quincy bookworm enterprise
 #deb http://download.proxmox.com/debian/ceph-quincy bookworm no-subscription
 ```
 
-### 1.4 nano |/etc/apt/sources.list.d/pve-no-subscription.list|
+### 1.4 nano | /etc/apt/sources.list.d/pve-no-subscription.list |
 ```bash
 deb https://mirrors.ustc.edu.cn/proxmox/debian/pve bookworm pve-no-subscription
 ```
