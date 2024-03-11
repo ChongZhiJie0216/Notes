@@ -2,6 +2,7 @@
 
 ## Source Reference comes from
   [pve7 pve8 kvmqemu反虚拟化检测显卡直通玩游戏教程小白直接安装+大神可以自己源码编译](https://www.bilibili.com/read/cv26245305/) by 李晓流
+
   [zhaodice/proxmox-ve-anti-detection](https://github.com/zhaodice/proxmox-ve-anti-detection)
 
 ## 1. Edit Source Lisr
@@ -110,7 +111,7 @@ make clean
 cp -r qemu qemu-bak
 ```
 
-### 5.3 Create a SED File or Download from [Here]()
+### 5.3 Create a SED File or Download from [Here](https://github.com/ChongZhiJie0216/Notes/blob/main/PromoxVE/Anti-Detection/sedPatch-pve-qemu-kvm7-8-anti-dection.sh)
 ```bash
 cd qemu
 nano sedPatch-pve-qemu-kvm7-8-anti-dection.sh
