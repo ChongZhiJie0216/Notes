@@ -86,5 +86,6 @@ mdevctl types
 
 # Args of AntiDetect of PromoxVE
 ```
-qm set <VM_ID> --args "-cpu host,hypervisor=off,vmware-cpuid-freq=false,enforce=false,host-phys-bits=true, -smbios type=0,version=UX305UA.201 -smbios type=1,manufacturer=Supermicro,product=X9SRL-F,version=2017.07 -smbios type=2,manufacturer=Intel,version=2021.5,product='Intel E5-2697v2' -smbios type=3,manufacturer=XBZJ -smbios type=17,manufacturer=SAMSUNG,loc_pfx=DDR3,speed=1600,serial=114514,part=FF63 -smbios type=4,manufacturer=Intel,max-speed=1600,current-speed=1600"
+qm set <VM_ID> --args "-cpu host,hypervisor=off,vmware-cpuid-freq=false,enforce=false,host-phys-bits=true, -smbios type=0,version=X9SRLF.B13 -smbios type=1,manufacturer=Supermicro,product=X9SRL-F,version=2017.01 -smbios type=2,manufacturer=Intel,version=2021.5,product='Intel E5-2697v2' -smbios type=3,manufacturer=XBZJ -smbios type=17,manufacturer=KINGSTON,loc_pfx=DDR3,speed=1600,serial=114514,part=FF63 -smbios type=4,manufacturer=Intel,max-speed=1600,current-speed=1600"
+
 ```
