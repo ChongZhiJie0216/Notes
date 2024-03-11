@@ -41,7 +41,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on"
 ```
 
 >[!Note]
-> ```pci=realloc=off```
+> ```pci=realloc=off``` <br>
 > This Varable of give for Serial Attached SCSI controller
 > Broadcom / LSI SAS2008 PCI-Express Fusion-MPT SAS-2 [Falcon] (rev 03)
 
