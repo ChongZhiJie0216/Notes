@@ -1,15 +1,13 @@
-# Tight VNC Server 安装
+# Real VNC Server Installation
 
-# 1.更新资源包
-
+# 1.Update Package Resources
 ```bash
 sudo apt-get update
 sudo apt update
 sudo apt install curl wget git -y
 ```
 
-# 2.下载安装包
-
+# 2.Download Installation Package
 ```bash
 wget https://downloads.realvnc.com/download/file/vnc.files/VNC-Server-6.11.0-Linux-ARM64.deb
 sudo dpkg -i ./VNC-Server-6.11.0-Linux-ARM64.deb
@@ -19,27 +17,23 @@ sudo ln libvchiq_arm.so /usr/lib/libvchiq_arm.so.0
 sudo ln libbcm_host.so /usr/lib/libbcm_host.so.0
 ```
 
-# 4.编辑 /etc/gdm3/custom.conf 文件
-
-因为您正在使用非 LTS 版本，并取消注释 WaylandEnable=false。
-
+# 4.Edit the /etc/gdm3/custom.conf File
+As you are using a non-LTS version, uncomment WaylandEnable=false.
 ```bash
 sudo nano /etc/gdm3/custom.conf
 ```
 
-# 5.输入激活码
-
+# 5.Input Activation Code
 ```bash
 sudo vnclicense -add XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
 ```
 
-# 6.设置密码
-
+# 6.Set Password
 ```bash
 vncpasswd
 ```
 
-# 7.设置开机自动启动
+# 7.Set Auto-start on Boot
 
 ```bash
 sudo systemctl enable vncserver-virtuald.service
