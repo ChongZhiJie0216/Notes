@@ -24,7 +24,7 @@
 
 ###### CHANGE ME! 
 # IP and PORT of FastAPI-DLS 
-DLS_IP=dls.scarletlabs.io
+DLS_IP=
 #DLS_IP=dls.jiecloud.net
 DLS_PORT=443
 # Token folder, must be on a filesystem that supports
