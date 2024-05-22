@@ -140,6 +140,9 @@ max_pixels = 2073600
 | 引导 |ARC Loader 24.5.16|
 |NVIDIA_HOST驱动版本|535.161.05|
 
+> [!CAUTION]
+> 截止目前为止(22.05.2024)英伟达驱动还没正式支援6.8内核，安全起见请用6.5内核上进行，虽然网上有人写了patch驱动安全起见还是在6.5版本上进行 <br>
+> [PVE 8.2内核6.8-NVIDIA驱动相关议题](https://gitlab.com/polloloco/vgpu-proxmox/-/issues/52)
 
 ### 硬件配置:
 |   硬件   |  配置  |
