@@ -139,9 +139,19 @@ max_pixels = 2073600
 | 机型 |SA6400   |
 | 引导 |ARC Loader 24.5.16|
 |NVIDIA_HOST驱动版本|535.161.05|
-|HBA卡|Broadcom / LSI SAS2008 PCI-Express Fusion-MPT SAS-2 [Falcon] (rev 03)|
+
+
+### 硬件配置:
+|   硬件   |  配置  |
+|---------|--------|
+|处理器|E5-2697v2|
+|主板|X9SRL-F|
+|内存|8x三星32G 1600 4R*4(256G)|
+|固态硬盘(系统)|Micro 7300 Pro 1920GB|
 |显卡|Tesla-P40(vGPU)|
 |   |Tesla-P4(直通VM)|
+|HBA卡|Broadcom / LSI SAS2008 PCI-Express Fusion-MPT SAS-2 [Falcon] (rev 03)|
+|电源|darkFlash GS650W|
 
 ![alt text](image-5.png)
 
