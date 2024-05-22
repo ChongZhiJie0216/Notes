@@ -39,6 +39,10 @@ display_height = 1080
 max_pixels = 2073600
 ```
 
+> [!WARNING]  
+> 在 **`[profile.nvidia-46]`** 内必须要有 **framebuffer** 和 **framebuffer_reservation** 否则他会以你选的默认配置文件的设定进行分配
+> 例如：**`[profile.nvidia-46]`** 的默认是1024M，那么你的群辉就只会看到1024M的显存
+
 >[!Note]
 > 相信大家看到这边还是会有点懵懵懂懂的下面我就来为大家解释下
 > ![](image.png)<br>
