@@ -52,10 +52,10 @@ max_pixels = 2073600
 >
 > VGPU_Unlock这个程序的本质是为了让我们可以灵活的分配VRAM，避免造成显卡资源的浪费。可是群辉引导的特殊性不受VGPU_Unlock控制所以我们只能反向而行
 
-### 3.3以下是VRAM自定义大小的参数
-来源:[Common VRAM sizes](https://gitlab.com/polloloco/vgpu-proxmox/-/blob/master/README.md?ref_type=heads&blame=1&plain=0#common-vram-sizes)
+### 3.3 以下是VRAM自定义大小的参数
+##### **来源:[Common VRAM sizes](https://gitlab.com/polloloco/vgpu-proxmox/-/blob/master/README.md?ref_type=heads&blame=1&plain=0#common-vram-sizes)**
 
-## 分享本人成功案例
+## 3.4  分享本人成功案例
 ### 环境:
 | 环境 |  版本   |
 |-----|---------|
