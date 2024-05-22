@@ -1,4 +1,4 @@
-# 如何在DSM上使用vGPU
+# 如何在DSM上使用vGPU  (PVE + 虚拟黑裙SA6400 + LSI SAS2008 + GRID P40-1Q)
 
 ## 1.首先先按照以下环境安装完vGPU的环境
 [NVIDIA vGPU Guide](https://gitlab.com/polloloco/vgpu-proxmox)
@@ -138,6 +138,8 @@ max_pixels = 2073600
 |HBA卡|Broadcom / LSI SAS2008 PCI-Express Fusion-MPT SAS-2 [Falcon] (rev 03)|
 |显卡|Tesla-P40(vGPU)|
 |   |Tesla-P4(直通VM)|
+
+![alt text](image-5.png)
 
 ![alt text](image-1.png)
 
