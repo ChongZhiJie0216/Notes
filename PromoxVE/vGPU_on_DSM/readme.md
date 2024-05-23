@@ -1,5 +1,8 @@
 # PVE + 虚拟黑裙SA6400 + LSI SAS2008 + GRID P40-1Q
 
+> [!WARNING]  
+> vGPU授权会在DSM中不稳定，不确定是驱动问题还是FastAPI的问题，目前FastAPI的时区都是对应着群辉的。所以我判断应该是其他地方出问题
+
 ## 1.首先先按照以下环境安装完vGPU的环境
 [NVIDIA vGPU Guide](https://gitlab.com/polloloco/vgpu-proxmox)
 
