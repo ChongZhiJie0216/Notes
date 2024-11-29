@@ -25,14 +25,21 @@ update-initramfs -k all -u
 reboot
 ```
 
-### 3.After the restart is complete, install the Guest driver
+### 3. Uninstall Offical Driver Packages
+
+```bash
+apt remove nvidia-alternative
+apt-get autoremove
+```
+
+### 4.After the restart is complete, install the Guest driver
 
 ```bash
 chmod +x NVIDIA-Linux-x86_64-535.54.03-grid.run
 ./NVIDIA-Linux-x86_64-535.54.03-grid.run
 ```
 
-### 4.Verify installation was successful
+### 5.Verify installation was successful
 
 ```bash
 dkms status
@@ -43,7 +50,7 @@ nvidia-smi -q | grep License
 > [!NOTE]
 > View authorization, Unlicensed (Unrestricted) means not authorized
 
-### 5.FastAPI-DLS Authorization
+### 6.FastAPI-DLS Authorization
 
 ```bash
 curl --insecure -L -X GET https://<IP_ADDR>/-/client-token -o /etc/nvidia/ClientConfigToken/client_configuration_token_$(date '+%d-%m-%Y-%H-%M-%S').tok
