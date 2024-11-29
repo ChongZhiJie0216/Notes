@@ -35,8 +35,8 @@ apt-get autoremove
 ### 4.After the restart is complete, install the Guest driver
 
 ```bash
-chmod +x NVIDIA-Linux-x86_64-535.54.03-grid.run
-./NVIDIA-Linux-x86_64-535.54.03-grid.run
+chmod +x NVIDIA-Linux-x86_64-XXX.XX.XX-grid.run --
+./NVIDIA-Linux-x86_64-XXX.XX.XX-grid.run
 ```
 
 ### 5.Verify installation was successful
@@ -61,3 +61,9 @@ nvidia-smi -q | grep License
 
 > [!WARNING]
 > FastAPI-DLS must be online as it performs authorization during system boot.
+
+### 7.Test vGPU Working
+
+```bash
+sudo docker run --rm --gpus all nvidia/cuda:12.0.1-base-ubuntu22.04 nvidia-smi
+```
