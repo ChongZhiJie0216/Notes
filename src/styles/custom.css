@@ -1,0 +1,110 @@
+/* Swiss Minimalist Theme for Starlight */
+
+/* 
+  Starlight Semantic Colors:
+  --sl-color-white: Primary Foreground (Dark in Light Mode, Light in Dark Mode)
+  --sl-color-black: Primary Background (Light in Light Mode, Dark in Dark Mode)
+  --sl-color-gray-1 to 7: Foreground to Background scale 
+*/
+
+/* LIGHT MODE (Default) */
+:root,
+:root[data-theme='light'] {
+  /* Backgrounds */
+  --sl-color-black: #ffffff;
+  --sl-color-bg: var(--sl-color-black);
+  --sl-color-bg-nav: var(--sl-color-black);
+  --sl-color-bg-sidebar: var(--sl-color-black);
+  
+  /* Foregrounds */
+  --sl-color-white: #000000;
+  --sl-color-text: #333333;
+  --sl-color-text-accent: #000000;
+
+  /* Grays (Foreground to Background) */
+  --sl-color-gray-1: #111111;
+  --sl-color-gray-2: #333333;
+  --sl-color-gray-3: #555555;
+  --sl-color-gray-4: #888888;
+  --sl-color-gray-5: #aaaaaa;
+  --sl-color-gray-6: #dddddd;
+  --sl-color-gray-7: #eeeeee;
+
+  /* Borders */
+  --sl-color-hairline-light: var(--sl-color-gray-7);
+  --sl-color-hairline: var(--sl-color-gray-6);
+  --sl-color-hairline-shade: var(--sl-color-gray-5);
+}
+
+/* DARK MODE */
+:root[data-theme='dark'] {
+  /* Backgrounds */
+  --sl-color-black: #000000;
+  --sl-color-bg: var(--sl-color-black);
+  --sl-color-bg-nav: var(--sl-color-black);
+  --sl-color-bg-sidebar: var(--sl-color-black);
+  
+  /* Foregrounds */
+  --sl-color-white: #ffffff;
+  --sl-color-text: #dddddd;
+  --sl-color-text-accent: #ffffff;
+
+  /* Grays (Foreground to Background) */
+  --sl-color-gray-1: #eeeeee;
+  --sl-color-gray-2: #dddddd;
+  --sl-color-gray-3: #aaaaaa;
+  --sl-color-gray-4: #888888;
+  --sl-color-gray-5: #555555;
+  --sl-color-gray-6: #333333;
+  --sl-color-gray-7: #111111;
+
+  /* Borders */
+  --sl-color-hairline-light: var(--sl-color-gray-7);
+  --sl-color-hairline: var(--sl-color-gray-6);
+  --sl-color-hairline-shade: var(--sl-color-gray-5);
+}
+
+/* GLOBAL CONFIGURATION */
+:root {
+  /* Typography fonts */
+  --sl-font: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  
+  /* Layout constraints for reading */
+  --sl-content-width: 45rem;
+}
+
+/* Explicit heading and title colors for contrast */
+h1, h2, h3, h4, h5, h6, .site-title, .title {
+  color: var(--sl-color-white) !important;
+}
+
+/* Clean up borders and shadows */
+.header, .sidebar, .right-sidebar-panel {
+  border-color: var(--sl-color-hairline) !important;
+}
+
+/* Content styling */
+.sl-markdown-content {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--sl-color-text);
+}
+
+.sl-markdown-content h1, 
+.sl-markdown-content h2, 
+.sl-markdown-content h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.sl-markdown-content a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  color: var(--sl-color-text);
+}
+
+.sl-markdown-content a:hover {
+  color: var(--sl-color-text-accent);
+  text-decoration-thickness: 2px;
+}

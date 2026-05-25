@@ -1,0 +1,21 @@
+---
+import Default from '@astrojs/starlight/components/Footer.astro';
+import type { Props } from '@astrojs/starlight/props';
+---
+
+<Default {...Astro.props} />
+
+<div class="custom-footer">
+  <p>&copy; {new Date().getFullYear()} My Notes. Built with Astro & Starlight by Jiecloud</p>
+</div>
+
+<style>
+  .custom-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--sl-color-hairline);
+    text-align: center;
+    color: var(--sl-color-gray-3);
+    font-size: 0.9rem;
+  }
+</style>

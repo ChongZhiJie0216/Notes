@@ -1,0 +1,81 @@
+---
+import { getCollection } from 'astro:content';
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+const { folder } = Astro.props;
+
+// Fetch all documents
+const docs = await getCollection('docs');
+
+// Get all note IDs for the random button logic (excluding the homepage)
+const allNoteIds = docs.filter(doc => doc.id !== 'index').map(doc => doc.id);
+
+// Collect items to display based on whether we are scanning the root or a specific folder
+const items = new Map();
+
+docs.forEach(doc => {
+  // In Astro 5, `doc.id` is the exact route slug (e.g., 'index', 'promoxve', 'promoxve/vgpu_on_dsm')
+  // Skip the main site homepage
+  if (doc.id === 'index') return;
+  
+  const parts = doc.id.split('/');
+  
+  if (folder) {
+    // Convert the exact folder name to its expected ID format (e.g., "Raspberrypi Pi" -> "raspberrypi-pi")
+    const targetFolderId = folder.toLowerCase().replace(/ /g, '-');
+    
+    // If the document is a direct child of the target folder
+    // e.g. parts = ['windows', 'windowsconnectguestprinter']
+    if (parts.length > 1 && parts[0] === targetFolderId) {
+      const noteName = parts[1];
+      if (!items.has(noteName)) {
+        items.set(noteName, doc.id);
+      }
+    }
+  } else {
+    // We are at the root, scanning for top-level categories
+    const folderName = parts[0];
+    
+    // If this is the exact index of a folder (e.g., 'promoxve'), set it directly
+    if (parts.length === 1) {
+      items.set(folderName, doc.id);
+    } 
+    // If it's a file inside a folder and we haven't tracked this folder yet, fallback to this file
+    else if (!items.has(folderName)) {
+      items.set(folderName, doc.id);
+    }
+  }
+});
+
+const itemList = Array.from(items.entries()).sort();
+
+function formatTitle(idPart) {
+  return idPart
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+    .replace(/_/g, ' ');
+}
+---
+
+<CardGrid>
+  {itemList.map(([name, route]) => (
+    <LinkCard 
+      title={formatTitle(name)} 
+      href={`/${route}/`} 
+    />
+  ))}
+</CardGrid>
+
+<script define:vars={{ allNoteIds }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('random-btn');
+    if (btn && allNoteIds && allNoteIds.length > 0) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const randomIndex = Math.floor(Math.random() * allNoteIds.length);
+        window.location.href = '/' + allNoteIds[randomIndex] + '/';
+      });
+    }
+  });
+</script>
