@@ -56,25 +56,32 @@ function formatTitle(idPart) {
     .join(' ')
     .replace(/_/g, ' ');
 }
+
+// Ensure base URL correctly prepends the generated routes so GitHub pages works
+const baseUrl = import.meta.env.BASE_URL;
+function getPath(route) {
+  return `${baseUrl}${route}/`.replace(/\/\/+/g, '/'); // ensure no double slashes
+}
 ---
 
 <CardGrid>
   {itemList.map(([name, route]) => (
     <LinkCard 
       title={formatTitle(name)} 
-      href={`/${route}/`} 
+      href={getPath(route)} 
     />
   ))}
 </CardGrid>
 
-<script define:vars={{ allNoteIds }}>
+<script define:vars={{ allNoteIds, baseUrl }}>
   document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('random-btn');
     if (btn && allNoteIds && allNoteIds.length > 0) {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         const randomIndex = Math.floor(Math.random() * allNoteIds.length);
-        window.location.href = '/' + allNoteIds[randomIndex] + '/';
+        let path = `${baseUrl}${allNoteIds[randomIndex]}/`.replace(/\/\/+/g, '/');
+        window.location.href = path;
       });
     }
   });
